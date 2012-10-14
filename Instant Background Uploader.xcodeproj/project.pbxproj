@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A7AD1AE1542194900C65963 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7AD1AD1542194900C65963 /* Cocoa.framework */; };
+		2A7AD1B81542194900C65963 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AD1B61542194900C65963 /* InfoPlist.strings */; };
+		2A7AD1BA1542194900C65963 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AD1B91542194900C65963 /* main.m */; };
+		2A7AD1C11542194900C65963 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AD1C01542194900C65963 /* AppDelegate.m */; };
+		2A7AD1C41542194900C65963 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AD1C21542194900C65963 /* MainMenu.xib */; };
+		2A7AD1D015421A6800C65963 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AD1CF15421A6800C65963 /* MAAttachedWindow.m */; };
+		2A7AD1D415421AAA00C65963 /* app_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AD1D215421AAA00C65963 /* app_icon.icns */; };
+		2A7AD1D515421AAA00C65963 /* app_icon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AD1D315421AAA00C65963 /* app_icon.ico */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A7AD1A91542194900C65963 /* Instant Background Uploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instant Background Uploader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7AD1AD1542194900C65963 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2A7AD1B01542194900C65963 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2A7AD1B11542194900C65963 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2A7AD1B21542194900C65963 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2A7AD1B51542194900C65963 /* Instant Background Uploader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Instant Background Uploader-Info.plist"; sourceTree = "<group>"; };
+		2A7AD1B71542194900C65963 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A7AD1B91542194900C65963 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A7AD1BB1542194900C65963 /* Instant Background Uploader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instant Background Uploader-Prefix.pch"; sourceTree = "<group>"; };
+		2A7AD1BF1542194900C65963 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2A7AD1C01542194900C65963 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2A7AD1C31542194900C65963 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2A7AD1CE15421A6800C65963 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAttachedWindow.h; sourceTree = "<group>"; };
+		2A7AD1CF15421A6800C65963 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAttachedWindow.m; sourceTree = "<group>"; };
+		2A7AD1D215421AAA00C65963 /* app_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app_icon.icns; sourceTree = "<group>"; };
+		2A7AD1D315421AAA00C65963 /* app_icon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = app_icon.ico; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A7AD1A61542194900C65963 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7AD1AE1542194900C65963 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A7AD19E1542194900C65963 = {
+			isa = PBXGroup;
+			children = (
+				2A7AD1B31542194900C65963 /* Instant Background Uploader */,
+				2A7AD1AC1542194900C65963 /* Frameworks */,
+				2A7AD1AA1542194900C65963 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A7AD1AA1542194900C65963 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A7AD1A91542194900C65963 /* Instant Background Uploader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A7AD1AC1542194900C65963 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A7AD1AD1542194900C65963 /* Cocoa.framework */,
+				2A7AD1AF1542194900C65963 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A7AD1AF1542194900C65963 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A7AD1B01542194900C65963 /* AppKit.framework */,
+				2A7AD1B11542194900C65963 /* CoreData.framework */,
+				2A7AD1B21542194900C65963 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2A7AD1B31542194900C65963 /* Instant Background Uploader */ = {
+			isa = PBXGroup;
+			children = (
+				2A7AD1BF1542194900C65963 /* AppDelegate.h */,
+				2A7AD1C01542194900C65963 /* AppDelegate.m */,
+				2A7AD1CE15421A6800C65963 /* MAAttachedWindow.h */,
+				2A7AD1CF15421A6800C65963 /* MAAttachedWindow.m */,
+				2A7AD1C21542194900C65963 /* MainMenu.xib */,
+				2A7AD1B41542194900C65963 /* Supporting Files */,
+			);
+			path = "Instant Background Uploader";
+			sourceTree = "<group>";
+		};
+		2A7AD1B41542194900C65963 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A7AD1D215421AAA00C65963 /* app_icon.icns */,
+				2A7AD1D315421AAA00C65963 /* app_icon.ico */,
+				2A7AD1B61542194900C65963 /* InfoPlist.strings */,
+				2A7AD1B51542194900C65963 /* Instant Background Uploader-Info.plist */,
+				2A7AD1BB1542194900C65963 /* Instant Background Uploader-Prefix.pch */,
+				2A7AD1B91542194900C65963 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A7AD1A81542194900C65963 /* Instant Background Uploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A7AD1C71542194900C65963 /* Build configuration list for PBXNativeTarget "Instant Background Uploader" */;
+			buildPhases = (
+				2A7AD1A51542194900C65963 /* Sources */,
+				2A7AD1A61542194900C65963 /* Frameworks */,
+				2A7AD1A71542194900C65963 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Instant Background Uploader";
+			productName = "Instant Background Uploader";
+			productReference = 2A7AD1A91542194900C65963 /* Instant Background Uploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A7AD1A01542194900C65963 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2A7AD1A31542194900C65963 /* Build configuration list for PBXProject "Instant Background Uploader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A7AD19E1542194900C65963;
+			productRefGroup = 2A7AD1AA1542194900C65963 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A7AD1A81542194900C65963 /* Instant Background Uploader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A7AD1A71542194900C65963 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7AD1B81542194900C65963 /* InfoPlist.strings in Resources */,
+				2A7AD1C41542194900C65963 /* MainMenu.xib in Resources */,
+				2A7AD1D415421AAA00C65963 /* app_icon.icns in Resources */,
+				2A7AD1D515421AAA00C65963 /* app_icon.ico in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A7AD1A51542194900C65963 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7AD1BA1542194900C65963 /* main.m in Sources */,
+				2A7AD1C11542194900C65963 /* AppDelegate.m in Sources */,
+				2A7AD1D015421A6800C65963 /* MAAttachedWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2A7AD1B61542194900C65963 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A7AD1B71542194900C65963 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2A7AD1C21542194900C65963 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A7AD1C31542194900C65963 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A7AD1C51542194900C65963 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2A7AD1C61542194900C65963 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2A7AD1C81542194900C65963 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Instant Background Uploader/Instant Background Uploader-Prefix.pch";
+				INFOPLIST_FILE = "Instant Background Uploader/Instant Background Uploader-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2A7AD1C91542194900C65963 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Instant Background Uploader/Instant Background Uploader-Prefix.pch";
+				INFOPLIST_FILE = "Instant Background Uploader/Instant Background Uploader-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A7AD1A31542194900C65963 /* Build configuration list for PBXProject "Instant Background Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A7AD1C51542194900C65963 /* Debug */,
+				2A7AD1C61542194900C65963 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A7AD1C71542194900C65963 /* Build configuration list for PBXNativeTarget "Instant Background Uploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A7AD1C81542194900C65963 /* Debug */,
+				2A7AD1C91542194900C65963 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A7AD1A01542194900C65963 /* Project object */;
+}

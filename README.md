@@ -13,7 +13,7 @@ Screenshots
 
 ![](http://img502.imageshack.us/img502/6910/imageety.png)
 
-A previous version used Matt Gemmell's MAAttachedWindow instead of Notification Center.
+A previous version used Matt Gemmell's MAAttachedWindow for notifications, instead of Mountain Lion's Notification Center.
 
 ![](http://img193.imageshack.us/img193/14/imageyd.png)
 
@@ -21,7 +21,7 @@ Requirements
 ------------
 - OS X 10.8 Mountain Lion (it uses Notification Center)
 
-It's easy to make it fall back to MAAttachedWindow for previous versions of OS X, however. But I'm unlikely to do it myself, since I don't have access to an older OS X version right now, and trying to build something blindly isn't efficient. If you can do it, please submit a pull request and I'll add it.
+It's easy to make it (dynamically) fall back to MAAttachedWindow for previous versions of OS X. But I'm unlikely to do it myself, since I don't have access to an older OS X version right now, and trying to build something blindly isn't efficient. If you can do it, that'd be great. Please submit a pull request and I'll merge it.
 
 Attribution
 -----------

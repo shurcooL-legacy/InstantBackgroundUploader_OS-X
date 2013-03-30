@@ -9,13 +9,13 @@ Downloads
 
 Screenshots
 -----------
-![](http://img87.imageshack.us/img87/5285/imagenit.png)
+![](https://dl.dropbox.com/u/8554242/dmitri/projects/InstantBackgroundUploader_OS-X/images/InstantBackgroundUploader1.png)
 
-![](http://img502.imageshack.us/img502/6910/imageety.png)
+![](https://dl.dropbox.com/u/8554242/dmitri/projects/InstantBackgroundUploader_OS-X/images/InstantBackgroundUploader2b.png)
 
 A previous version used Matt Gemmell's MAAttachedWindow for notifications, instead of Mountain Lion's Notification Center.
 
-![](http://img193.imageshack.us/img193/14/imageyd.png)
+![](https://dl.dropbox.com/u/8554242/dmitri/projects/InstantBackgroundUploader_OS-X/images/InstantBackgroundUploader2.png)
 
 Requirements
 ------------

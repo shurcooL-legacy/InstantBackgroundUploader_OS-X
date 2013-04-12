@@ -3,9 +3,11 @@ Instant Background Uploader (OS X)
 
 A simple menu bar OS X app to convert a local image (in the clipboard) to its online URL (in the clipboard), uploaded to ImageShack.us.
 
+It can also convert a local image (in the clipboard) to an \<img\> tag with inline [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) encoded representation.
+
 Downloads
 ---------
-[Download Instant Background Uploader](https://github.com/downloads/shurcooL/InstantBackgroundUploader_OS-X/InstantBackgroundUploader_OS-X.zip) for OS X
+[Download Instant Background Uploader](https://dl.dropbox.com/u/8554242/dmitri/projects/InstantBackgroundUploader_OS-X/downloads/InstantBackgroundUploader_OS-X.zip) for OS X
 
 Screenshots
 -----------

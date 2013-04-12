@@ -45,9 +45,7 @@
 {
 	//while (!(nil != conversionPngThread && [conversionPngThread isFinished]))
 	while (!targetImageDataExistsPng)
-	{
 		usleep(50);
-	}
 
 	requestedUploadAction = 1;
 	[self UploadImage];
@@ -57,12 +55,94 @@
 {
 	//while (!(nil != conversionJpgThread && [conversionJpgThread isFinished]))
 	while (!targetImageDataExistsJpg)
-	{
 		usleep(50);
-	}
 
 	requestedUploadAction = 2;
 	[self UploadImage];
+}
+
+- (IBAction)ConvertImageAsPng:(id)sender
+{
+	while (!targetImageDataExistsPng)
+		usleep(50);
+
+	NSString * string = [NSString stringWithFormat:@"<img src=\"data:image/png;base64,%@\">", [self Base64Encode: targetImageDataPng]];
+	[self setPasteboardString: string];
+}
+
+- (IBAction)ConvertImageAsJpg:(id)sender
+{
+	while (!targetImageDataExistsJpg)
+		usleep(50);
+
+	NSString * string = [NSString stringWithFormat:@"<img src=\"data:image/jpeg;base64,%@\">", [self Base64Encode: targetImageDataJpg]];
+	[self setPasteboardString: string];
+}
+
+-(NSString *)Base64Encode:(NSData *)data{
+	// Point to start of the data and set buffer sizes
+	unsigned long inLength = [data length];
+	unsigned long outLength = ((((inLength * 4)/3)/4)*4) + (((inLength * 4)/3)%4 ? 4 : 0);
+	const char *inputBuffer = [data bytes];
+	char *outputBuffer = malloc(outLength);
+	outputBuffer[outLength] = 0;
+
+	// 64 digit code
+	static char Encode[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+	// start the count
+	unsigned long cycle = 0;
+	unsigned long inpos = 0;
+	unsigned long outpos = 0;
+	char temp;
+
+	// Pad the last to bytes, the outbuffer must always be a multiple of 4
+	outputBuffer[outLength-1] = '=';
+	outputBuffer[outLength-2] = '=';
+
+	/* http://en.wikipedia.org/wiki/Base64
+	 Text content   M           a           n
+	 ASCII          77          97          110
+	 8 Bit pattern  01001101    01100001    01101110
+
+	 6 Bit pattern  010011  010110  000101  101110
+	 Index          19      22      5       46
+	 Base64-encoded T       W       F       u
+	 */
+
+	while (inpos < inLength){
+		switch (cycle) {
+			case 0:
+				outputBuffer[outpos++] = Encode[(inputBuffer[inpos]&0xFC)>>2];
+				cycle = 1;
+				break;
+			case 1:
+				temp = (inputBuffer[inpos++]&0x03)<<4;
+				outputBuffer[outpos] = Encode[temp];
+				cycle = 2;
+				break;
+			case 2:
+				outputBuffer[outpos++] = Encode[temp|(inputBuffer[inpos]&0xF0)>> 4];
+				temp = (inputBuffer[inpos++]&0x0F)<<2;
+				outputBuffer[outpos] = Encode[temp];
+				cycle = 3;
+				break;
+			case 3:
+				outputBuffer[outpos++] = Encode[temp|(inputBuffer[inpos]&0xC0)>>6];
+				cycle = 4;
+				break;
+			case 4:
+				outputBuffer[outpos++] = Encode[inputBuffer[inpos++]&0x3f];
+				cycle = 0;
+				break;
+			default:
+				cycle = 0;
+				break;
+		}
+	}
+	NSString *pictemp = [NSString stringWithUTF8String:outputBuffer];
+	free(outputBuffer);
+	return pictemp;
 }
 
 - (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification
@@ -102,10 +182,7 @@
 		&& [imageUrl length] > 0)
 	{
 		// Set clipboard contents to a string
-		NSPasteboard * pb = [NSPasteboard generalPasteboard];
-		NSArray * types = [NSArray arrayWithObjects:NSStringPboardType, nil];
-		[pb declareTypes:types owner:self];
-		[pb setString:imageUrl forType:NSStringPboardType];
+		[self setPasteboardString: imageUrl];
 
 		// Open it in a browser
 		[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: imageUrl]];
@@ -114,13 +191,22 @@
 	{}
 }
 
+// Set clipboard contents to a string
+- (void)setPasteboardString:(NSString *)string
+{
+	NSPasteboard * pb = [NSPasteboard generalPasteboard];
+	NSArray * types = [NSArray arrayWithObjects:NSStringPboardType, nil];
+	[pb declareTypes:types owner:self];
+	[pb setString:string forType:NSStringPboardType];
+}
+
 - (IBAction)UploadImageAsNotificationCenter:(id)sender
 {
-	/*NSString * imageUrl = @"http://img209.imageshack.us/img209/8207/imageel.png";
+	NSString * imageUrl = @"http://img209.imageshack.us/img209/8207/imageel.png";
 	//NSString * imageUrl = @"";
 	NSString * failReason;
 
-	[self displayUserNotification: imageUrl failReason: failReason];*/
+	[self displayUserNotification: imageUrl failReason: failReason];
 }
 
 - (IBAction)UploadImage
@@ -195,10 +281,7 @@
 		if ([imageUrl length] > 0)
 		{
 			// Set clipboard contents to a string
-			NSPasteboard * pb = [NSPasteboard generalPasteboard];
-			NSArray * types = [NSArray arrayWithObjects:NSStringPboardType, nil];
-			[pb declareTypes:types owner:self];
-			[pb setString:imageUrl forType:NSStringPboardType];
+			[self setPasteboardString: imageUrl];
 
 			// Display a popup balloon
 			//[self toggleAttachedWindowAtPoint:notificationPosition message:@"Image uploaded successfully,\nits URL is now in your Clipboard." withUrl:[NSURL URLWithString:imageUrl]];
@@ -359,7 +442,7 @@
 	
 	ItemAndTitle * object = [ItemAndTitle new];
 	object->item = uploadPngMenuItem;
-	object->title = [NSString stringWithFormat:@"Upload Image from Clipboard (%i KiB)", [targetImageDataPng length] / 1024];
+	object->title = [NSString stringWithFormat:@"Upload Image from Clipboard (%lu KiB)", [targetImageDataPng length] / 1024];
 	[self performSelectorOnMainThread:@selector(changeMenuTitle:)withObject:object waitUntilDone:YES];
 }
 
@@ -379,7 +462,7 @@
 
 	ItemAndTitle * object = [ItemAndTitle new];
 	object->item = uploadJpgMenuItem;
-	object->title = [NSString stringWithFormat:@"Upload Image from Clipboard as JPEG (%i KiB)", [targetImageDataJpg length] / 1024];
+	object->title = [NSString stringWithFormat:@"Upload Image from Clipboard as JPEG (%lu KiB)", [targetImageDataJpg length] / 1024];
 	[self performSelectorOnMainThread:@selector(changeMenuTitle:)withObject:object waitUntilDone:YES];
 }
 
@@ -460,6 +543,9 @@
 	{
 		[item setHidden: ![uploadPngMenuItem isEnabled]];
 		[item setTitle:@"Upload Image from Clipboard as JPEG"];
+
+		[convertBase64MenuItem setHidden: ![uploadPngMenuItem isEnabled]];
+
 		return YES;
 	}
 
@@ -495,7 +581,7 @@
 	[statusItem sendActionOn: NSLeftMouseDownMask];
 	[statusItem setTarget:self];*/
 
-	[statusItem setToolTip:@"Instant Background Uploader (0.005)"];
+	[statusItem setToolTip:@"Instant Background Uploader (0.006)"];
 }
 
 @end

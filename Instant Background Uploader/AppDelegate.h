@@ -18,6 +18,7 @@
 
 	IBOutlet NSMenuItem * uploadPngMenuItem;
 	IBOutlet NSMenuItem * uploadJpgMenuItem;
+	IBOutlet NSMenuItem * convertBase64MenuItem;
 
 	MAAttachedWindow *attachedWindow;
     IBOutlet NSView *view;

@@ -572,8 +572,13 @@
 
 	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	//[statusItem setTitle:@"Status"];
-	NSImage * app_icon = [NSImage imageNamed:@"app_icon.ico"];
+	NSSize app_icon_size = NSMakeSize(16, 16);
+	NSImage * app_icon = [NSImage imageNamed:@"Icon"];
+	[app_icon setSize: app_icon_size];
+	NSImage * app_icon_inv = [NSImage imageNamed:@"Icon-inv"];
+	[app_icon_inv setSize: app_icon_size];
 	[statusItem setImage:app_icon];
+	[statusItem setAlternateImage: app_icon_inv];
 	[statusItem setHighlightMode:YES];
 
 	[statusItem setMenu:statusMenu];
@@ -581,7 +586,7 @@
 	[statusItem sendActionOn: NSLeftMouseDownMask];
 	[statusItem setTarget:self];*/
 
-	[statusItem setToolTip:@"Instant Background Uploader (0.006)"];
+	[statusItem setToolTip:@"Instant Background Uploader (0.007)"];
 }
 
 @end

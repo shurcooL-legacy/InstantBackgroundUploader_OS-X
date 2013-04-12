@@ -390,7 +390,7 @@
 
 - (BOOL)validateMenuItem:(NSMenuItem *)item
 {
-	if ([item action] == @selector(UploadImageAsPng:))
+	if (item == uploadPngMenuItem)
 	{
 		// Update notificationPosition
 		NSRect frame = [[[NSApp currentEvent] window] frame];
@@ -456,7 +456,7 @@
 			return NO;
 		}
 	}
-	else if ([item action] == @selector(UploadImageAsJpg:))
+	else if (item == uploadJpgMenuItem)
 	{
 		[item setHidden: ![uploadPngMenuItem isEnabled]];
 		[item setTitle:@"Upload Image from Clipboard as JPEG"];
@@ -478,7 +478,7 @@
 	targetImageDataPng = nil;
 	targetImageDataExistsJpg = false;
 	targetImageDataJpg = nil;
-	
+
 	conversionPngThread = nil;
 	conversionJpgThread = nil;
 
